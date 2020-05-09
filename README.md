@@ -37,7 +37,7 @@ Réponse : page HTML
 
 ## **Services api rest**
 - **service lister()** -> renvoie une liste des id, noms et prénoms de tous les scouts encodés  
-Réponse : JSON[{scoutId, scoutNom, scoutPrénom}]
+Réponse : JSON[{scoutId, scoutNom, scoutPrenom}]
 - **service fiche()** -> renvoie une liste de tous les scouts et leurs informations  
 Réponse : JSON[{scoutId, scoutPrenom, scoutNom, scoutDateNaissance, scoutTelephone, scoutMail, scoutTotem, roleLib, patrLib}]
 - **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:mail,:totem,:role,:patrouille)** -> récupère un scout et ses informations  
