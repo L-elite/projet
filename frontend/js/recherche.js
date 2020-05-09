@@ -1,6 +1,5 @@
 "use strict";
 
-// Fait appel au service "fiche" et renvoie un tableau reprenant tous les scouts et leurs infos
 function rechercherScouts() {
     let recherche = document.getElementById("rechercher").value;
     let xhr = new XMLHttpRequest();
@@ -11,8 +10,6 @@ function rechercherScouts() {
     xhr.send();
 }
 
-// Parcourt le tableau de scouts reçu et retient ceux qui correspondent au critère de recherche puis les place dans une
-// table html el les insère dans la page
 function callbackRechercherScout(tableau, recherche) {
     afficherCarte('recherche');
     let proprietes = Object.keys(tableau[0]);
@@ -22,10 +19,33 @@ function callbackRechercherScout(tableau, recherche) {
     for (let e of tableau) {
         for (let f of proprietes) {
             if (e[f] === recherche) {
-                div += "<tr id=" + e[proprietes[0]] + " onclick='creerFicheScout(" + e[proprietes[0]] + ", \"recherche\")'><td>" + e.Prénom + "</td><td>" + e.Nom + "</td></tr>";
+                div += "<tr id=" + e[proprietes[0]] + " onclick='creerFicheScout2(" + e[proprietes[0]] + ")'><td>" + e.Prénom + "</td><td>" + e.Nom + "</td></tr>";
             }
         }
     }
-    div += "</table></div>";
     document.querySelector("div.resultats").innerHTML = div;
+}
+
+function creerFicheScout2(id) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", "fiche");
+    xhr.onload = function () {
+        callbackCreerFicheScout2(JSON.parse(xhr.responseText), id)
+    };
+    xhr.send();
+}
+
+function callbackCreerFicheScout2(tableau, id) {
+    let proprietes = Object.keys(tableau[0]);
+    let div = "<div class='fiche'>";
+    for (let e of tableau) {
+        if (e.Id === id) {
+            div += "<table id=" + e.Id + ">";
+            for (let f = 1; f < proprietes.length; f++) {
+                div += "<tr><td>" + proprietes[f] + "</td><td>" + e[proprietes[f]] + "</td></tr>";
+            }
+        }
+    }
+    div += "</table><button class='button1  ' onclick='supprimer()'>Supprimer</button></div>";
+    document.querySelector(".card#recherche div.card-heading").innerHTML = div;
 }
