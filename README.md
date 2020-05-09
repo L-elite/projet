@@ -24,7 +24,7 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
 
 # Webservices  
 ## **Services de base**
-- **service root(:url)** -> renvoie la page si elle existe  
+- **service root(:url)** -> renvoie la page html   
 Réponse : page HTML
 - **service js(:url)** -> renvoie le fichier js  
 Réponse : fichier js
@@ -32,7 +32,7 @@ Réponse : fichier js
 Réponse : fichier css
 - **service img(:url)** -> renvoie le fichier image  
 Réponse : fichier image
-- **service page(:url)** -> renvoie la page si elle existe  
+- **service page(:url)** -> renvoie la page html  
 Réponse : page HTML
 
 ## **Services api rest**
