@@ -21,6 +21,7 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
 - **roles** -> reprend les différents rôles
 - **patrouilles** -> reprend les différentes patrouilles
 - **scouts** -> reprend tous les scouts et leurs inforamtions
+
 # Webservices  
 ## **Services de base**
 - **service root(:url)** -> renvoie la page si elle existe, l'index sinon.
@@ -33,6 +34,7 @@ Réponse: fichier css
 Réponse: fichier image
 - **service page(:url)** -> renvoie la page si elle existe, l'index sinon.
 Réponse: page HTML
+
 ## **Services api rest**
 - **service lister()** -> Renvoie une liste de tout les scouts encodé
 Réponse:JSON[{scoutId,scoutNom,scoutPrénom}]
