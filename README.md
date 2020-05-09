@@ -27,57 +27,58 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
  - **patrouilles** -> reprend les différentes patrouilles
  - **scouts** -> reprend tous les scouts et leurs inforamtions
  # Webservices 
- - service de base
  
-    - service root(:url) -> renvoie la page si elle existe, l'index sinon.
+ - **service de base**
+ 
+    - **service root(:url)** -> renvoie la page si elle existe, l'index sinon.
     
       Réponse:page HTML
     
-    - service js(:url) -> renvoie le fichier js à partir d'un nom ( avec extension )
+    - **service js(:url)** -> renvoie le fichier js à partir d'un nom ( avec extension )
     
       Réponse: fichier js
     
-    - service css(:url) -> renvoie le fichier css à partir d'un nom ( avec extension )
+    - **service css(:url)** -> renvoie le fichier css à partir d'un nom ( avec extension )
     
     Réponse: fichier css
     
-    - service img(:url) -> renvoie le fichier image à partir d'un nom ( avec extension )
+    - **service img(:url)** -> renvoie le fichier image à partir d'un nom ( avec extension )
     
       Réponse: fichier image
     
-    - service page(:url) -> renvoie la page si elle existe, l'index sinon.
+    - **service page(:url)** -> renvoie la page si elle existe, l'index sinon.
     
       Réponse: page HTML
  
- - service de récupération de données
+ - **service de récupération de données**
     
-    - service inscrire(:nom,:prenom,:dateNassance,:telephno,:email,:totem,:role,:patrouille) -> renvoie         les détails du scouts
+    - **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:email,:totem,:role,:patrouille)** -> renvoie         les détails du scouts
     
       Réponse: JSON[{nom,prenom}]
      
- - service de suppression de scout
+ - **service de suppression de scout**
     
-    - service supprimer() -> supprime les données d'un scouts ce trouvant dans la liste
+    - **service supprimer()** -> supprime les données d'un scouts ce trouvant dans la liste
     
       Réponse:JSON[{status}]
   
- - service de listage
+ - **service de listage**
  
-    - service lister() -> Renvoie une liste de tout les scouts encodé
+    - **service lister()** -> Renvoie une liste de tout les scouts encodé
     
       Réponse:JSON[{scoutId,scoutNom,scoutPrénom}]
     
-    - service Role() -> Renvoie une liste des roles
+    - **service Role()** -> Renvoie une liste des roles
     
       Réponse:JSON[{roleId,roleLib}]
    
-    - service patrouille() ->Renvoie une liste des patrouilles
+    - **service patrouille()** ->Renvoie une liste des patrouilles
     
       Réponse:JSON[{patrId,patrNom}]
  
- - service d'affichage de fiche scout
+ - **service d'affichage de fiche scout**
  
-    - service fiche() -> 
+    - **service fiche()** -> 
      
       Réponse:JSON[{scoutId,scoutPrenom,scoutNom,dateNaissance,telephone,mail,totem roleLib patrNom}]
  
