@@ -15,71 +15,33 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
  
  ## Fonctionnalités supplémentaires
  - (Il est possible de voir les autres membres de la patrouille d'un scout sélectionné)
- # Aspects implémentés
- 
- # Détail api rest
- Nous disposons de 6 services :
- - Le service "lister" permet de construire le listing des scouts inscrits dans la base de données. Il ne prend aucun paramètre et renvoie un tableau reprenant les noms et prénoms des scouts inscrits dans la base de données.
- - Le service "fiche" permet d'afficher toutes les infos d'un scout sélectionné. Il ne prend aucun paramètre et renvoie un tableau reprenant toutes les infos 
- # Détail DB
+ # Tables
  ![](diagramme_er.png)
  - **roles** -> reprend les différents rôles
  - **patrouilles** -> reprend les différentes patrouilles
  - **scouts** -> reprend tous les scouts et leurs inforamtions
- # Webservices 
- 
- - **service de base**
- 
+ # Webservices  
+ - **Services de base**
     - **service root(:url)** -> renvoie la page si elle existe, l'index sinon.
-    
       Réponse:page HTML
-    
     - **service js(:url)** -> renvoie le fichier js à partir d'un nom ( avec extension )
-    
       Réponse: fichier js
-    
     - **service css(:url)** -> renvoie le fichier css à partir d'un nom ( avec extension )
-    
     Réponse: fichier css
-    
     - **service img(:url)** -> renvoie le fichier image à partir d'un nom ( avec extension )
-    
       Réponse: fichier image
-    
     - **service page(:url)** -> renvoie la page si elle existe, l'index sinon.
-    
       Réponse: page HTML
- 
- - **service de récupération de données**
-    
-    - **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:email,:totem,:role,:patrouille)** -> renvoie         les détails du scouts
-    
+ - **Services api rest**
+    - **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:email,:totem,:role,:patrouille)** -> renvoie les détails du scouts
       Réponse: JSON[{nom,prenom}]
-     
- - **service de suppression de scout**
-    
-    - **service supprimer()** -> supprime les données d'un scouts ce trouvant dans la liste
-    
+    - **service supprimer()** -> supprime les données d'un scouts se trouvant dans la liste
       Réponse:JSON[{status}]
-  
- - **service de listage**
- 
     - **service lister()** -> Renvoie une liste de tout les scouts encodé
-    
       Réponse:JSON[{scoutId,scoutNom,scoutPrénom}]
-    
-    - **service Role()** -> Renvoie une liste des roles
-    
+    - **service role()** -> Renvoie une liste des roles
       Réponse:JSON[{roleId,roleLib}]
-   
     - **service patrouille()** ->Renvoie une liste des patrouilles
-    
-      Réponse:JSON[{patrId,patrNom}]
- 
- - **service d'affichage de fiche scout**
- 
+      Réponse:JSON[{patrId,patrLib}]
     - **service fiche()** -> 
-     
-      Réponse:JSON[{scoutId,scoutPrenom,scoutNom,dateNaissance,telephone,mail,totem roleLib patrNom}]
- 
- 
+      Réponse:JSON[{scoutId,scoutPrenom,scoutNom,dateNaissance,telephone,mail,totem roleLib patrLib}]
