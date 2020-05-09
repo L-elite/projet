@@ -11,10 +11,10 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
 - Un bouton "Listing" permet d'afficher un tableau reprenant tous les scouts et leurs données
 - Un formulaire permet l'encodage d'un nouveau scout et ses données
 - Une barre de recherche permet de rechercher un scout grâce à n'importe quelle donnée, une liste des scouts correspondants au critère de recherche est affichée
-- Il est possible de sélectionner un scout dans la liste obtenue avec l'outil recherche. Une fiche reprenant toutes les données du scout est affichée. (Un bouton "Modifier" permet de modifier les données et un bouton "Supprimer" permet de supprimer le scout de la base de données.)
+- Il est possible de sélectionner un scout dans la liste obtenue avec l'outil recherche. Une fiche reprenant toutes les données du scout est affichée. Un bouton "Supprimer" permet de supprimer le scout de la base de données.
  
 ## Fonctionnalités supplémentaires
-- (Il est possible de voir les autres membres de la patrouille d'un scout sélectionné)
+- Lors de l'encodage d'un scout, on vérifie si celui-ci est déjà présent dans la base de données auquel cas on ne l'inscrit pas de nouveau.
 
 # Tables
 ![](diagramme_er.png)
