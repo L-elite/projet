@@ -12,7 +12,9 @@
     <script src="js/fiche.js"></script>
     <script src="js/recherche.js"></script>
     <script src="js/inscrire.js"></script>
-    <script src="js/roles_patrouilles.js"></script>
+    <script src="js/confirmer.js"></script>
+    <script src="js/supprimer.js"></script>
+    <script src="js/manquante.js"></script>
 </head>
 <body>
 <header>
@@ -30,39 +32,49 @@
     </ul>
 </header>
 <main>
-    <div class="page-wrapper">
-        <div class="wrapper">
+    <div class="page-wrapper" style="display: block;">
+        <div class="wrapper" id="cadre" style="display: block;">
             <div class="card" id="inscription" style="display: table">
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Inscription</h2>
                     <form id="formScout" onsubmit="return false">
                         <div class="input">
-                            <input class="input-style" name="nom" id="nom" type="text" placeholder="Nom">
+                            <input class="input-style" name="nom" id="nom" type="text" placeholder="Nom" required="required">
                         </div>
                         <div class="input">
-                            <input class="input-style" name="prenom" id="prenom" type="text" placeholder="Prénom">
+                            <input class="input-style" name="prenom" id="prenom" type="text" placeholder="Prénom" required="required">
                         </div>
                         <div class="input">
                             <input class="input-style" name="dateNaissance" id="dateNaissance" type="text"
-                                   placeholder="Date de naissance (dd/mm/yyyy)">
+                                   placeholder="Date de naissance" required="required">
                         </div>
                         <div class="input">
-                            <input class="input-style" name="telephone" id="telephone" type="text" placeholder="Téléphone">
+                            <input class="input-style" name="telephone" id="telephone" type="text" placeholder="Téléphone" required="required">
                         </div>
                         <div class="input">
-                            <input class="input-style" name="mail" id="mail" type="email" placeholder="Email">
+                            <input class="input-style" name="mail" id="mail" type="email" placeholder="Email" required="required">
                         </div>
                         <div class="input">
-                            <input class="input-style" name="totem" id="totem" type="text" placeholder="Totem">
+                            <input class="input-style" name="totem" id="totem" type="text" placeholder="Totem" required="required">
                         </div>
-                        <div class="input" id="selectRole">
-
+                        <div class="input">
+                            <select class="select" id="role" required>
+                                <option disabled="disabled" selected="selected" value="">Rôle</option>
+                                <option value=1>Chef de patrouille</option>
+                                <option value=2>Second de patrouille</option>
+                                <option value=3>Scout</option>
+                            </select>
                         </div>
-                        <div class="input" id="selectPatrouille">
-
+                        <div class="input">
+                            <select class="select" id="patrouille" required>
+                                <option disabled="disabled" selected="selected" value="">Patrouille</option>
+                                <option value=1>Patrouille d'Alcyon</option>
+                                <option value=2>Patrouille de Basindo</option>
+                                <option value=3>Patrouille de Coryi</option>
+                            </select>
                         </div>
-                        <button class="button" name="envoyer" onclick="inscrireScout()">Envoyer</button>
+                        <button class="button" name="envoyer" onclick="inscrireScouts()">Envoyer</button>
                     </form>
                 </div>
             </div>
@@ -88,6 +100,69 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="Confirmer" class="backgound" style="display: none;">
+            <br>
+            <br>
+            <h1 class="regle">L'inscription n'a pas été prise ne compte car vous n'avez</h1>
+            <h1 class="regle">pas complété tout le formulaire avec tous les champs !</h1>
+            <button class="button" id="regle" onclick="window.location.reload(false)">Compris</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>             
+            <br>
+            <br>
+            <br>
+            <br>             
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="existeDeja" class="backgound" style="display: none;">
+            <br>
+            <br>
+            <h1 class="regle">Ce scout existe déja !</h1>
+            <button class="button" id="regle" onclick="window.location.reload(false)">Compris</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>             
+            <br>
+            <br>
+            <br>
+            <br>             
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
 </main>
