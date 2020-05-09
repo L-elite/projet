@@ -1,7 +1,7 @@
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
-html {
+   html {
     box-sizing: border-box;
 }
 
@@ -57,6 +57,7 @@ body {
     font-size: 14px;
     min-height: 100vh;
     background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -316,4 +317,40 @@ li button:hover, li input:hover {
 }
 .fiche table tr td {
     padding-bottom: 20px;
+}
+
+.button1 { 
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    color: #fff; border-radius: 20px; 
+    background: #57b846; position: absolute; 
+    margin-top: 400px; 
+    margin-left: 10px; 
+    width: 100px; 
+    height: 40PX; 
+}
+
+#confirmation {
+    color: white;
+    text-align: center; 
+}
+
+
+.regle {
+    color: white;
+    text-align: center;
+}
+
+#regle {
+    display: block;
+    margin : auto;
+    margin-top: 50px;
+}
+
+.backgound {
+    background-image: url("../img/la-haut.jpg");
+    background-repeat: no-repeat;
+    margin-top: ;
+    margin-bottom: ;
+    margin-left: 5%;
+    margin-right: 5%;
 }
