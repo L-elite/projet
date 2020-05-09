@@ -25,27 +25,26 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
 # Webservices  
 ## **Services de base**
 - **service root(:url)** -> renvoie la page si elle existe
- Réponse : page HTML
+  Réponse : page HTML
 - **service js(:url)** -> renvoie le fichier js
- Réponse : fichier js
+  Réponse : fichier js
 - **service css(:url)** -> renvoie le fichier css
- Réponse : fichier css
+  Réponse : fichier css
 - **service img(:url)** -> renvoie le fichier image
- Réponse : fichier image
+  Réponse : fichier image
 - **service page(:url)** -> renvoie la page si elle existe
- Réponse : page HTML
+  Réponse : page HTML
 
 ## **Services api rest**
 - **service lister()** -> renvoie une liste des id, noms et prénoms de tous les scouts encodés
- Réponse : JSON[{scoutId, scoutNom, scoutPrénom}]
+  Réponse : JSON[{scoutId, scoutNom, scoutPrénom}]
 - **service fiche()** -> renvoie une liste de tous les scouts et leurs informations
- Réponse : JSON[{scoutId, scoutPrenom, scoutNom, scoutDateNaissance, scoutTelephone, scoutMail, scoutTotem, roleLib, patrLib}]
+  Réponse : JSON[{scoutId, scoutPrenom, scoutNom, scoutDateNaissance, scoutTelephone, scoutMail, scoutTotem, roleLib, patrLib}]
 - **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:mail,:totem,:role,:patrouille)** -> récupère un scout et ses informations
- Réponse : JSON[]
+  Réponse : JSON[]
 - **service supprimer()** -> supprime les données d'un scouts se trouvant dans la liste
- Réponse : JSON[]
+  Réponse : JSON[]
 - **service role()** -> renvoie une liste des rôles
- Réponse : JSON[{roleId, roleLib}]
+  Réponse : JSON[{roleId, roleLib}]
 - **service patrouille()** -> renvoie une liste des patrouilles
- Réponse : JSON[{patrId, patrLib}]
-
+  Réponse : JSON[{patrId, patrLib}]
