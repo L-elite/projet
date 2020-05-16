@@ -1,7 +1,7 @@
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
-html {
+   html {
     box-sizing: border-box;
 }
 
@@ -48,7 +48,7 @@ button {
    ========================================================================== */
 .page-wrapper {
     padding-top: 150px;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
 }
 
 body {
@@ -56,8 +56,8 @@ body {
     font-weight: 400;
     font-size: 14px;
     min-height: 100vh;
-    background: #57b846;
-    /* background: linear-gradient(to top, #ebfbc2 0%, #a1d18c 100%); /* #fbc2eb #a18cd1 */
+    background: linear-gradient(to top, #91f79a 0%, #462e7c 100%);
+    overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,71 +98,6 @@ h2 {
 
 .button:hover {
     background: #4dae3c;
-}
-
-/* ==========================================================================
-   #NAVIGATION
-   ========================================================================== */
-
-.nav {
-    position: fixed;
-    width: 100%;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
-}
-
-li {
-    float: left;
-}
-
-li button {
-    display: block;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
-    background: transparent;
-    outline: none;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    font-size: 16px;
-    font-family: inherit;
-    border-right: solid 1px rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-}
-
-li input {
-    display: block;
-    color: #ccc;
-    padding: 20px;
-    text-decoration: none;
-    background: transparent;
-    outline: none;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    font-size: 16px;
-    font-family: inherit;
-}
-
-li input::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: #ccc;
-    background: transparent;
-}
-
-li button:hover, li input:hover {
-    background-color: #111;
 }
 
 /* ==========================================================================
@@ -231,7 +166,7 @@ main input::placeholder {
 
 .listing, .resultats {
     height: 586px;
-    display: inline-block;
+    display:inline-block;
     overflow-y: scroll;
     width: 100%;
 }
@@ -248,37 +183,6 @@ main input::placeholder {
     background: #111;
     border-radius: 10px;
     border: solid 3px #000;
-}
-
-/* ==========================================================================
-   #FICHE
-   ========================================================================== */
-
-.fiche {
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 57px 65px;
-    display: block;
-    width: 100%;
-    height: 777px;
-}
-
-.fiche table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.fiche table tr td {
-    padding-bottom: 25px;
-    padding-left: 10px;
-}
-
-.fiche table tr td:first-child {
-    width: 100px;
-    border-right: solid 1px #fff;
-    padding-left: 0;
 }
 
 /* ==========================================================================
@@ -331,3 +235,156 @@ main option {
     padding: 57px 65px;
     display: table-cell;
 }
+
+
+
+.nav {
+    position: fixed;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+li {
+    float: left;
+}
+
+li button {
+    display: block;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+    border-right: solid 1px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+li input {
+    display: block;
+    color: #ccc;
+    padding: 20px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+li input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+    background: transparent;
+}
+
+li button:hover, li input:hover {
+    background-color: #111;
+}
+
+
+.fiche {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 57px 65px;
+    display: flex;
+    width: 100%;
+    height: 777px;
+}
+.fiche table {
+    width: 100%;
+}
+.fiche table tr td {
+    padding-bottom: 20px;
+}
+
+.button1 { 
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    color: #fff; border-radius: 20px; 
+    background: #57b846; position: absolute; 
+    margin-top: 400px; 
+    margin-left: 10px; 
+    width: 100px; 
+    height: 40PX; 
+}
+
+#confirmation {
+    color: white;
+    text-align: center; 
+}
+
+
+.regle {
+    color: white;
+    text-align: center;
+}
+
+#regle {
+    display: block;
+    margin : auto;
+    margin-top: 50px;
+}
+
+/* ==========================================================================
+   banner
+   ========================================================================== */
+
+#nombreDeScout{
+    background-color: black;
+    display:block;
+    width: 900px;
+    height:50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    color:white;
+    font-family: inherit;
+}
+
+#table{
+    font-size:large;
+    margin-left: 75px;
+    padding-top: 10px;
+}
+
+li{
+ margin-right: 30px;
+}
+
+/* ==========================================================================
+   Filtreur
+   ========================================================================== */
+
+   #filtreur{
+       color: white;
+       margin-bottom: 5px;
+       font-size: large;
+       font-family: inherit;
+   }
+
+   .Filtre {
+    color: white;
+    margin-bottom: 5px;
+    font-size: large;
+    font-family: inherit;
+   }
+
