@@ -1,6 +1,5 @@
 "use strict";
 
-// Affiche la div souhaitée
 function afficherCarte(card) {
     document.getElementById("inscription").style.display = "none";
     document.getElementById("listing").style.display = "none";
