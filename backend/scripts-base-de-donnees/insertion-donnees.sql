@@ -1,11 +1,11 @@
------ Insertion données -----
+----- Insertion donnï¿½es -----
 
 insert into scouts
-(scoutPrenom, scoutNom, scoutPatrouille, scoutRole, scoutTotem, scoutTelephone, scoutMail, scoutDateNaissance)
+(scoutPrenom, scoutNom, patrouille, role, totem, telephone, mail, dateNaissance)
 values 
 ('Bastien', 'Sabeau', 2, 1, 'Basindo', '0499/99.99.99', 'basindo@gmail.com', '2003-05-01'),
 ('Martin', 'Malfroid', 3, 1, 'Coryi', '0499/99.99.99', 'coryi@gmail.com', '2003-05-01'),
-('Aléandro', 'Gerardin', 2, 2, 'Manati', '0499/99.99.99', 'manati@gmail.com', '2003-05-01'),
+('Alï¿½andro', 'Gerardin', 2, 2, 'Manati', '0499/99.99.99', 'manati@gmail.com', '2003-05-01'),
 ('Alexandre', 'Delory', 1, 2, 'Miriki', '0499/99.99.99', 'miriki@gmail.com', '2003-05-01'),
 ('Mael', 'Albertuccio', 1, 3, 'Springbok', '0499/99.99.99', 'springbok@gmail.com', '2003-05-01' ),
 ('Adrien', 'Florins', 1, 3, 'Orignal', '0499/99.99.99', 'orignal@gmail.com', '2003-05-01'),
@@ -18,8 +18,8 @@ values
 ('Gabriel', 'Lefevre', 3, 3, null, '0499/99.99.99', 'gabriel@gmail.com', '2003-05-01'),
 ('Logan', 'Lorent', 2, 3, null, '0499/99.99.99', 'logan@gmail.com', '2003-05-01'),
 ('Florian', 'Maes', 3, 3, 'Aonyx', '0499/99.99.99', 'aonyx@gmail.com', '2003-05-01'),
-('Rénathan', 'Nonnveiler', 3, 2, 'Brolga', '0499/99.99.99', 'brolga@gmail.com', '2003-05-01'),
-('Félix', 'Roelands', 1, 3, null, '0499/99.99.99', 'felix@gmail.com', '2003-05-01');
+('Rï¿½nathan', 'Nonnveiler', 3, 2, 'Brolga', '0499/99.99.99', 'brolga@gmail.com', '2003-05-01'),
+('Fï¿½lix', 'Roelands', 1, 3, null, '0499/99.99.99', 'felix@gmail.com', '2003-05-01');
 
 --
 
@@ -33,7 +33,7 @@ values
 --
 
 insert into patrouilles
-(patrLib)
+(patrNom)
 values
 ('Patrouille d''Alcyon'),
 ('Patrouille de Basindo'),
