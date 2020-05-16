@@ -1,99 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>Scouts</title>
-    <link rel="stylesheet" type="text/css" href="css/scouts.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/scouts.css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/common.js"></script>
-    <script src="js/louis-lister.js"></script>
-    <script src="js/louis-fiche.js"></script>
-    <script src="js/logan_et_louis-recherche.js"></script>
-    <script src="js/logan-inscrire.js"></script>
-    <script src="js/wassim-patrouilles.js"></script>
-    <script src="js/wassim-roles.js"></script>
-    <script src="js/logan-supprimer.js"></script>
+    <script src="js/lister.js"></script>
+    <script src="js/fiche.js"></script>
+    <script src="js/rechercher.js"></script>
+    <script src="js/inscrire.js"></script>
+    <script src="js/supprimer.js"></script>
+    <script src="js/roles_patrouilles.js"></script>
+    <script src="js/afficherNombreScout(Wassim).js"></script>
+    <script src="js/Filtrer.js"></script>
 </head>
+
 <body>
-<header>
-    <ul class="nav">
-        <li><input type="search" id="rechercher" placeholder="Recherche"></li>
-        <li>
-            <button type="submit" onclick="rechercherScouts()"><i class="fa fa-search"></i></button>
-        </li>
-        <li>
-            <button onclick="afficherCarte('inscription')">Inscription</button>
-        </li>
-        <li>
-            <button onclick="afficherCarte('listing')">Listing</button>
-        </li>
-    </ul>
-</header>
-<main>
-    <div class="page-wrapper">
-        <div class="wrapper">
-            <div class="card" id="inscription" style="display: table">
-                <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">Inscription</h2>
-                    <form id="formScout" onsubmit="return false">
-                        <div class="input">
-                            <input class="input-style" name="nom" id="nom" type="text" placeholder="Nom">
-                        </div>
-                        <div class="input">
-                            <input class="input-style" name="prenom" id="prenom" type="text" placeholder="Prénom">
-                        </div>
-                        <div class="input">
-                            <input class="input-style" name="dateNaissance" id="dateNaissance" type="text"
-                                   placeholder="Date de naissance (dd/mm/yyyy)">
-                        </div>
-                        <div class="input">
-                            <input class="input-style" name="telephone" id="telephone" type="text" placeholder="Téléphone">
-                        </div>
-                        <div class="input">
-                            <input class="input-style" name="mail" id="mail" type="email" placeholder="Email">
-                        </div>
-                        <div class="input">
-                            <input class="input-style" name="totem" id="totem" type="text" placeholder="Totem">
-                        </div>
-                        <div class="input" id="selectRole">
-
-                        </div>
-                        <div class="input" id="selectPatrouille">
-
-                        </div>
-                        <button class="button" name="envoyer" onclick="inscrireScout()">Envoyer</button>
-                    </form>
+    <header>
+        <ul class="nav">
+            <li><input type="search" id="rechercher" placeholder="Recherche"></li>
+            <li>
+                <button type="submit" onclick="rechercherScouts()"><i class="fa fa-search"></i></button>
+            </li>
+            <li>
+                <button onclick="afficherCarte('inscription')">Inscription</button>
+            </li>
+            <li>
+                <button onclick="afficherCarte('listing'),filtreur()">Listing</button>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="page-wrapper" style="display: block;">
+            <div class="wrapper" id="cadre" style="display: block;">
+                <div class="card" id="inscription" style="display: table">
+                    <div class="card-heading"></div>
+                    <div class="card-body">
+                        <h2 class="title">Inscription</h2>
+                        <form id="formScout" onsubmit="return false">
+                            <div class="input">
+                                <input class="input-style" name="nom" id="nom" type="text" placeholder="Nom"
+                                    required="required">
+                            </div>
+                            <div class="input">
+                                <input class="input-style" name="prenom" id="prenom" type="text" placeholder="Prénom"
+                                    required="required">
+                            </div>
+                            <div class="input">
+                                <input class="input-style" name="dateNaissance" id="dateNaissance" type="text"
+                                    placeholder="Date de naissance" required="required">
+                            </div>
+                            <div class="input">
+                                <input class="input-style" name="telephone" id="telephone" type="text"
+                                    placeholder="Téléphone" required="required">
+                            </div>
+                            <div class="input">
+                                <input class="input-style" name="mail" id="mail" type="email" placeholder="Email"
+                                    required="required">
+                            </div>
+                            <div class="input">
+                                <input class="input-style" name="totem" id="totem" type="text" placeholder="Totem"
+                                    required="required">
+                            </div>
+                            <div class="input" id="selectRole">
+                            </div>
+                            <div class="input" id="selectPatrouille">
+                            </div>
+                            <button class="button" name="envoyer" onclick="inscrireScouts()">Envoyer</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="card" id="listing" style="display: none">
-                <div class="card-heading">
+                <div class="card" id="listing" style="display: none">
+                    <div class="card-heading">
 
+                    </div>
+                    <div class="card-body">
+                        <h2 class="title">Listing</h2>
+                        <h3 class="Filtre"> Filtre</h3>
+                        <div id="filtreur"></div>
+                        <div class="listing">
+
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h2 class="title">Listing</h2>
-                    <div class="listing">
+                <div class="card" id="recherche" style="display:none">
+                    <div class="card-heading">
 
+                    </div>
+                    <div class="card-body">
+                        <h2 class="title">Résultats</h2>
+                        <div class="resultats">
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card" id="recherche" style="display:none">
-                <div class="card-heading">
-
-                </div>
-                <div class="card-body">
-                    <h2 class="title">Résultats</h2>
-                    <div class="resultats">
-
-                    </div>
-                </div>
+            <div id="existeDeja" class="backgound" style="display: none;">
+                <br>
+                <br>
+                <h1 class="regle">Ce scout existe déja !</h1>
+                <button class="button" id="regle" onclick="window.location.reload(false)">Compris</button>
             </div>
+            <div id="nombreDeScout"></div>
         </div>
-    </div>
-</main>
-<footer>
-</footer>
+    </main>
+    <footer>
+    </footer>
 </body>
+
 </html>
