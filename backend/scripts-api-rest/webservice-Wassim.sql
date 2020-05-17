@@ -1,5 +1,5 @@
 ALTER PROCEDURE "DBA"."proc_afficherNombreScout"()
-result(IDpatrouille INTEGER , nomDePattrouille char(255))
+result(IDpatrouille INTEGER , nomDePatrouille char(255))
 BEGIN 
 
 select DBA.scouts.patrouille, DBA.patrouilles.patrNom
