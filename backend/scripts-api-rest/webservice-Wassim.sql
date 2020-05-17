@@ -1,10 +1,11 @@
 ALTER PROCEDURE "DBA"."proc_afficherNombreScout"()
-result(IDpatrouille INTEGER , nomDePatrouille char(255))
+result(idPatrouille integer, nomDePatrouille char(255), nbrScoutPatrouille INTEGER )
 BEGIN 
 
-select DBA.scouts.patrouille, DBA.patrouilles.patrNom
-from patrouilles join scouts
-        on patrouilles.patrId = scouts.patrouille
+select patrId,patrNom,count(scoutId) 
+from scouts join patrouilles
+    on scouts.patrouille = patrouilles.patrId
+GROUP BY patrId,patrNom
 
 END
 
@@ -20,4 +21,4 @@ END
 
 create service "nombreDeScout" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_afficherNombreScout();
 
-create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_filtrerScout(:id);
+create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_filtrerScout();
