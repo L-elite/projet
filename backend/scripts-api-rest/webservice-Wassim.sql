@@ -20,4 +20,4 @@ END
 
 create service "nombreDeScout" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_afficherNombreScout();
 
-create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_filtrerScout();
+create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_filtrerScout(:id);
