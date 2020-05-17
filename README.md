@@ -42,7 +42,7 @@ Réponse : page HTML
 Réponse : JSON[{scoutId, scoutNom, scoutPrenom}]
 - **service fiche()** -> renvoie une liste de tous les scouts et leurs informations  
 Réponse : JSON[{scoutId, scoutPrenom, scoutNom, scoutDateNaissance, scoutTelephone, scoutMail, scoutTotem, roleLib, patrLib}]
-- **service inscrire(:nom,:prenom,:dateNaissance,:telephone,:mail,:totem,:role,:patrouille)** -> récupère un scout et ses informations  
+- **service inscrire(:nom, :prenom, :dateNaissance, :telephone, :mail, :totem, :role, :patrouille)** -> récupère un scout et ses informations  
 Réponse : JSON[]
 - **service supprimer()** -> supprime les données d'un scouts se trouvant dans la liste  
 Réponse : JSON[]
@@ -51,6 +51,6 @@ Réponse : JSON[{roleId, roleLib}]
 - **service patrouille()** -> renvoie une liste des patrouilles  
 Réponse : JSON[{patrId, patrLib}]
 - **service filtrer(:id)** -> renvoie une liste de nom et prénom des scout apartenant a la patrouille d'id choisit
-Réponse : JSON[{scoutNom,scoutPrénom,patrId}]
+Réponse : JSON[{scoutNom, scoutPrénom, patrId}]
 - **service nombreDeScout()** -> renvoie un nombre de scout
-Réponse: JSON[{idPatrouille,nomDePatrouille,nombreScoutPatrouille}]
+Réponse: JSON[{idPatrouille, nomDePatrouille, nombreScoutPatrouille}]
