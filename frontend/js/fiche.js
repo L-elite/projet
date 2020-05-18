@@ -23,3 +23,23 @@ function callbackCreerFicheScout(tableau, id, card) {
     div += "</table><button class='button1' onclick='supprimer()'>Supprimer</button></div>";
     document.querySelector(".card#"+card+" div.card-heading").innerHTML = div;
 }
+
+function listerBadges(id, card) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", "badges?id=" + id)
+    xhr.onload = function () {
+        callbackListerBadges(JSON.parse(xhr.responseText), card)
+    }
+    xhr.send();
+}
+
+function callbackListerBadges(tableau, card) {
+    let ul = "<ul>";
+    for (let e of tableau) {
+
+        let li = "<li>" + e.badgeLib + "</li>";
+        ul += li;
+    }
+    ul += "</ul><button class='button' onclick='supprimerScout()'>Supprimer</button>";
+    document.querySelector(".card#" + card + " div.card-heading div.fiche").innerHTML += ul;
+}
