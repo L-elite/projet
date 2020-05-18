@@ -52,9 +52,9 @@ Réponse : JSON[]
 Réponse : JSON[{roleId, roleLib}]
 - **service patrouille()** -> renvoie une liste des patrouilles  
 Réponse : JSON[{patrId, patrLib}]
-- **service filtrer(:id)** -> renvoie une liste de nom et prénom des scout apartenant a la patrouille d'id choisit
+- **service filtrer(:id)** -> renvoie une liste de nom et prénom des scout appartenant à la patrouille d'id choisit
 Réponse : JSON[{scoutNom, scoutPrénom, patrId}]
-- **service nombreDeScout()** -> renvoie un nombre de scout  
+- **service nombreDeScout()** -> renvoie une liste des patrouilles et le nombre de scouts dans chacune d'entre elles  
 Réponse : JSON[{idPatrouille, nomDePatrouille, nombreScoutPatrouille}]
 - **service badges(:id)** -> renvoie la liste des badges possédés par un scout  
 Réponse : JSON[{badgeLib}]
