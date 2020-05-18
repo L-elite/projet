@@ -19,10 +19,12 @@ Nous désirons une page web qui permet à un utilisateur d'inscrire des scouts e
 - Lors de l'encodage d'un scout, on vérifie si celui-ci est déjà présent dans la base de données auquel cas on ne l'inscrit pas de nouveau.
 
 # Tables
-![](diagramme_er.png)
+![](diagramme_er2.png)
 - **table roles** -> reprend les différents rôles
 - **table patrouilles** -> reprend les différentes patrouilles
 - **table scouts** -> reprend tous les scouts et leurs informations
+- **table badges** -> reprend les différents badges
+- **table scouts_badges** -> reprend une liste des scouts avec chacun des badges qu'ils possèdent
 
 # Webservices  
 ## **Services de base**
@@ -53,4 +55,10 @@ Réponse : JSON[{patrId, patrLib}]
 - **service filtrer(:id)** -> renvoie une liste de nom et prénom des scout apartenant a la patrouille d'id choisit
 Réponse : JSON[{scoutNom, scoutPrénom, patrId}]
 - **service nombreDeScout()** -> renvoie un nombre de scout
-Réponse: JSON[{idPatrouille, nomDePatrouille, nombreScoutPatrouille}]
+Réponse : JSON[{idPatrouille, nomDePatrouille, nombreScoutPatrouille}]
+- **service badges(:id)** -> renvoie la liste des badges possédés par un scout
+Réponse : JSON[{badgeLib}]
+- **service scoutsbadges()** -> renvoie une liste des badges et le nombre de scouts possédant chacun d'entre eux
+Réponse : JSON[{badgeId, badgeLib, nombreScouts}]
+- **service possedantsbadge(:badgid)** -> renvoie une liste des scouts possedant le badge d'id choisit
+Réponse : JSON[{prenom, nom}]
