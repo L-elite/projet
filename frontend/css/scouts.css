@@ -1,7 +1,7 @@
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
-   html {
+html {
     box-sizing: border-box;
 }
 
@@ -48,7 +48,7 @@ button {
    ========================================================================== */
 .page-wrapper {
     padding-top: 150px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 
 body {
@@ -56,8 +56,8 @@ body {
     font-weight: 400;
     font-size: 14px;
     min-height: 100vh;
-    background: linear-gradient(to top, #91f79a 0%, #462e7c 100%);
-    overflow-y: scroll;
+    background: #57b846;
+    /* background: linear-gradient(to top, #ebfbc2 0%, #a1d18c 100%); /* #fbc2eb #a18cd1 */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,6 +98,71 @@ h2 {
 
 .button:hover {
     background: #4dae3c;
+}
+
+/* ==========================================================================
+   #NAVIGATION
+   ========================================================================== */
+
+.nav {
+    position: fixed;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.nav li {
+    float: left;
+}
+
+li button {
+    display: block;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+    border-right: solid 1px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+li input {
+    display: block;
+    color: #ccc;
+    padding: 20px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+li input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+    background: transparent;
+}
+
+li button:hover, li input:hover {
+    background-color: #111;
 }
 
 /* ==========================================================================
@@ -166,7 +231,7 @@ main input::placeholder {
 
 .listing, .resultats {
     height: 586px;
-    display:inline-block;
+    display: inline-block;
     overflow-y: scroll;
     width: 100%;
 }
@@ -183,6 +248,44 @@ main input::placeholder {
     background: #111;
     border-radius: 10px;
     border: solid 3px #000;
+}
+
+/* ==========================================================================
+   #FICHE
+   ========================================================================== */
+
+.fiche {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 57px 65px;
+    display: block;
+    width: 100%;
+    height: 777px;
+}
+
+.fiche table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.fiche table tr td {
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.fiche table tr td:first-child {
+    width: 100px;
+    border-right: solid 1px #fff;
+    padding-left: 0;
+}
+.fiche ul {
+    display: inline-block;
+}
+
+.fiche ul li {
+    color: #fff;
 }
 
 /* ==========================================================================
@@ -236,155 +339,98 @@ main option {
     display: table-cell;
 }
 
-
-
-.nav {
-    position: fixed;
-    width: 100%;
-}
-ul {
+.fiche ul {
+    background: transparent;
+    display: block;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
+    margin-bottom: 20px;
 }
 
-li {
-    float: left;
-}
-
-li button {
+.fiche ul li {
     display: block;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
-    background: transparent;
-    outline: none;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    font-size: 16px;
-    font-family: inherit;
-    border-right: solid 1px rgba(255, 255, 255, 0.2);
-    cursor: pointer;
+    padding-bottom: 10px;
+
 }
 
-li input {
-    display: block;
-    color: #ccc;
-    padding: 20px;
-    text-decoration: none;
-    background: transparent;
-    outline: none;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    font-size: 16px;
-    font-family: inherit;
-}
-
-li input::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: #ccc;
-    background: transparent;
-}
-
-li button:hover, li input:hover {
-    background-color: #111;
+.patrouilles ul {
+    color: #fff;
 }
 
 
-.fiche {
+
+
+
+
+
+
+
+
+
+
+.membres, .possedants {
     background: rgba(0, 0, 0, 0.75);
     color: #fff;
     font-family: inherit;
     font-size: 16px;
     padding: 57px 65px;
-    display: flex;
+    display: block;
     width: 100%;
     height: 777px;
 }
-.fiche table {
+
+.membres table, .possedants table {
     width: 100%;
-}
-.fiche table tr td {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-.button1 { 
-    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-    color: #fff; border-radius: 20px; 
-    background: #57b846; position: absolute; 
-    margin-top: 400px; 
-    margin-left: 10px; 
-    width: 100px; 
-    height: 40PX; 
+.membres table tr th, .possedants table tr th {
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 25px;
 }
 
-#confirmation {
-    color: white;
-    text-align: center; 
+.membres table tr th:first-child {
+    width: 50%;
+    border-right: solid 1px #fff;
+    padding-left: 0;
+}
+
+.membres table tr td, .possedants table tr td {
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.membres table tr td:first-child {
+    width: 50%;
+    border-right: solid 1px #fff;
+    padding-left: 0;
+}
+.membres ul, .possedants ul {
+    display: inline-block;
+}
+
+.membres ul li, .possedants ul li {
+    color: #fff;
 }
 
 
-.regle {
-    color: white;
-    text-align: center;
+
+
+
+
+
+.patrouilles, .badges {
+    height: 586px;
 }
 
-#regle {
-    display: block;
-    margin : auto;
-    margin-top: 50px;
-}
-
-/* ==========================================================================
-   banner
-   ========================================================================== */
-
-#nombreDeScout{
-    background-color: black;
-    display:block;
-    width: 900px;
-    height:50px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    margin-top: 10px;
-    color:white;
+.patrouilles ul, .badges ul {
+    color: #ccc;
     font-family: inherit;
+    font-size: 16px;
+    height: 100%;
 }
 
-#table{
-    font-size:large;
-    margin-left: 75px;
-    padding-top: 10px;
+.patrouilles ul li, .badges ul li {
+    padding-bottom: 25px;
+    cursor: pointer;
 }
-
-li{
- margin-right: 30px;
-}
-
-/* ==========================================================================
-   Filtreur
-   ========================================================================== */
-
-   #filtreur{
-       color: white;
-       margin-bottom: 5px;
-       font-size: large;
-       font-family: inherit;
-   }
-
-   .Filtre {
-    color: white;
-    margin-bottom: 5px;
-    font-size: large;
-    font-family: inherit;
-   }
-
