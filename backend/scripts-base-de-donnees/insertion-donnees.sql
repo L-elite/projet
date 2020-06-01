@@ -1,4 +1,4 @@
------ Insertion donn�es -----
+----- Insertion données -----
 
 insert into scouts
 (scoutPrenom, scoutNom, scoutPatrouille, scoutRole, scoutTotem, scoutTelephone, scoutMail, scoutDateNaissance)
@@ -40,3 +40,36 @@ values
 ('Patrouille de Coryi');
 
 --
+
+insert into badges
+(badgeLib)
+values
+('Badge campeur'),
+('Badge sportif'),
+('Badge naturaliste'),
+('Badge artiste'),
+('Badge correpondant'),
+('Badge troubadour'),
+('Badge bricoleur'),
+('Badge frère de tous'),
+('Badge pilote'),
+('Badge intendant');
+
+--
+
+insert into scouts_badges
+(scoutId, badgeId)
+values
+(1, 1),
+(1, 2),
+(1, 10),
+(2, 1),
+(2, 2),
+(2, 6),
+(3, 10),
+(3, 6),
+(4, 1),
+(4, 6),
+(5, 2),
+(6, 2),
+(7, 4);
