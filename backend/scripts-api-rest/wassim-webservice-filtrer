@@ -1,13 +1,11 @@
-CREATE PROCEDURE "DBA"."proc_filtrerScout"(id INTEGER )
-
-Result (id integer,nom char(255),prenom char(255),patrouille INTEGER )
-
+CREATE PROCEDURE "DBA"."proc_filtrerScout"(id INTEGER)
+Result (id integer, nom char(255), prenom char(255), patrouille INTEGER)
 BEGIN
-    select scoutId,DBA.scouts.scoutNom,DBA.scouts.scoutPrenom,DBA.scouts.patrouille
+    select scoutId,scoutNom,scoutPrenom,scoutPatrouille
     from scouts 
-    WHERE patrouille=id
+    WHERE scoutPatrouille = id
 END
 
 --
 
-create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call dba.proc_filtrerScout();
+create service "filtrer" type 'JSON' authorization off user "dba" url on methods 'get' as call proc_filtrerScout(:url);
