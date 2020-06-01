@@ -1,7 +1,7 @@
 create proc_listerBadges(id integer)
 result(badgeLib char(255))
 begin
-	select badgeLib
+    select badgeLib
     from badges
     join scouts_badges on badges.badgeId = scouts_badges.badgeId
     where scoutId = id
