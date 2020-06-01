@@ -1,7 +1,7 @@
------ Insertion données -----
+----- Insertion donn�es -----
 
 insert into scouts
-(scoutPrenom, scoutNom, patrouille, role, totem, telephone, mail, dateNaissance)
+(scoutPrenom, scoutNom, scoutPatrouille, scoutRole, scoutTotem, scoutTelephone, scoutMail, scoutDateNaissance)
 values 
 ('Bastien', 'Sabeau', 2, 1, 'Basindo', '0499/99.99.99', 'basindo@gmail.com', '2003-05-01'),
 ('Martin', 'Malfroid', 3, 1, 'Coryi', '0499/99.99.99', 'coryi@gmail.com', '2003-05-01'),
@@ -33,43 +33,10 @@ values
 --
 
 insert into patrouilles
-(patrNom)
+(patrLib)
 values
 ('Patrouille d''Alcyon'),
 ('Patrouille de Basindo'),
 ('Patrouille de Coryi');
 
 --
-
-insert into badges
-(badgeLib)
-values
-('Badge campeur'),
-('Badge sportif'),
-('Badge naturaliste'),
-('Badge artiste'),
-('Badge correpondant'),
-('Badge troubadour'),
-('Badge bricoleur'),
-('Badge frère de tous'),
-('Badge pilote'),
-('Badge intendant');
-
---
-
-insert into scouts_badges
-(scoutId, badgeId)
-values
-(1, 1),
-(1, 2),
-(1, 10),
-(2, 1),
-(2, 2),
-(2, 6),
-(3, 10),
-(3, 6),
-(4, 1),
-(4, 6),
-(5, 2),
-(6, 2),
-(7, 4);
