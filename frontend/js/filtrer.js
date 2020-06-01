@@ -2,13 +2,13 @@
 
 function filtreur(){
     let xhr = new XMLHttpRequest(); // permet d'envoyer une nouvelle requête de demande de données a un serveur web / permet l'interraction avec des serveurs
-    xhr.open("get", "patrouille"); // initialise la requête créé avec comme paramètre la méthode "GET" et le nom de mon service
+    xhr.open("get", "patrouilles"); // initialise la requête créé avec comme paramètre la méthode "GET" et le nom de mon service
     xhr.onload = callbackCreationFiltreur; // permet de lancer la fonction "callbackCreationFiltreur" lorsque la requête XMLHttpRequest a été complété/terminé avec succès
     xhr.send(); // envoie la requête au serveur
-    
 }
 
 function callbackCreationFiltreur(){
+    console.log(this.responseText);
     let tableau = JSON.parse(this.responseText); // La méthode JSON.parse() analyse une chaîne de caractères JSON et construit la valeur JavaScript ou l'objet décrit par cette chaîne
     // THIS fais référence au XHR de la fonction au dessus //XHR.responseText envoie Une chaîne de caractères qui contient la réponse à la requête sous forme de texte ou la valeur null si la requête a échoué ou n'a pas encore été envoyée
     let proprietes = Object.keys(tableau[0]); // renvoie un array  

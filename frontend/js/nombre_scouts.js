@@ -16,6 +16,6 @@ function callbackAffichageNombreScout() {
         let div = "<li value=" + e.idPatrouille +" id=" + e.idPatrouille + ">" + e.nomDePatrouille + " : " + e.nbrScoutPatrouille + "</li>";
         affichage += div;
     }
-    affichage += "<li>Total :" + String(total) + "</li>";
+    affichage += "<li>Total : " + String(total) + "</li>";
     document.getElementById("nombreDeScout").innerHTML = affichage;
 }
