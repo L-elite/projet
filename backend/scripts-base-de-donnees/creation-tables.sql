@@ -30,3 +30,21 @@ constraint fk_scouts_patrouilles foreign key (scoutPatrouille) references patrou
 constraint fk_scouts_roles foreign key (scoutRole) references roles(roleId),
 constraint pk_scouts primary key (scoutId)
 )
+
+--
+
+create table badges (
+badgeId integer not null default autoincrement,
+badgeLib char(255) not null,
+constraint pk_badges primary key (badgeId)
+)
+
+--
+
+create table scouts_badges (
+scoutId integer,
+badgeId integer,
+constraint fk_scouts_badges_scouts foreign key (scoutId) references scouts(scoutId),
+constraint fk_scouts_badges_badges foreign key (badgeId) references badges(badgeId),
+constraint pk_scouts_badges primary key (scoutId, badgeId)
+)
